@@ -1,6 +1,6 @@
 part of 'page.dart';
-
 // ignore_for_file: prefer_const_constructors
+
 class welcome extends StatelessWidget {
   const welcome({super.key});
 
@@ -40,10 +40,10 @@ class welcome extends StatelessWidget {
               height: 44,
               width: MediaQuery.of(context).size.width - 2 * defaultMargin,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => MyLoginPage()));},
                 child: Text(
                   'Started',
-                  style: textstyle.copyWith(
+                  style: TextStyle(
                       fontSize: 15, 
                       fontWeight: FontWeight.w400, 
                       color: color1),
@@ -52,8 +52,9 @@ class welcome extends StatelessWidget {
                   primary: color2,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)
-                  )
+                  ),
                 ),
+              
               ),
             ),
           ],

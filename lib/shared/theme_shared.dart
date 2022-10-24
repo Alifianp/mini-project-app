@@ -7,5 +7,5 @@ Color color2 = Color (0xFF136673);
 Color black = Colors.black;
 Color white = Colors.white;
 
-TextStyle textstyle = TextStyle(fontSize: 10,color: white, fontWeight: FontWeight.w500);
+TextStyle hexastyle = TextStyle(fontSize: 10,color: white, fontWeight: FontWeight.w500);
 TextStyle textstyle2 = TextStyle(fontSize: 10,color: black, fontWeight: FontWeight.w500);
