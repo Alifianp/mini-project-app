@@ -45,29 +45,36 @@ class _MyLoginPageState extends State<MyLoginPage> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text("Login"),
+      
       ),
       body: Container(
-        margin: EdgeInsets.only(top: 250),
-        alignment: Alignment.bottomCenter,
+        margin: EdgeInsets.only(top: 50),
         color: Colors.transparent,
-        child: Container(
-          decoration: BoxDecoration(
-              color: color2,
-              borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(40), topLeft: Radius.circular(40))),
-          child: Column(
-            children: [
-              SizedBox(
-                height: 20,
-              ),
-              Text('welcome',
-                  style: TextStyle(color: white, fontSize: 20)),
+        child: Column(
+          children: [
+            Image.asset('assets/image/logo.png',
+                height: 250, width: 200,),
+            Container(
+              decoration: BoxDecoration(
+                  color: color2,
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(40), topLeft: Radius.circular(40))),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text('welcome',
+                  textAlign: TextAlign.center,
+                      style: TextStyle(color: white, fontSize: 20)),
 
-              Text('Login',textAlign: TextAlign.left,
-                  style: TextStyle(color: white, fontSize: 30)),
-              textFormField(),
-            ],
-          ),
+                  Text('Login',textAlign: TextAlign.left,
+                      style: TextStyle(color: white, fontSize: 30)),
+                  textFormField(),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

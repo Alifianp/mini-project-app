@@ -14,10 +14,10 @@ class welcome extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: defaultMargin),
           children: [
             SizedBox(
-              height: 100,
+              height: 50,
             ),
-            Image.asset('assets/image/Lake 1.jpg',
-                height: 100, fit: BoxFit.fill),
+            Image.asset('assets/image/logo.png',
+                height: 250, width: 200,),
             SizedBox(
               height: 50,
             ),
