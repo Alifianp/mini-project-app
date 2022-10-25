@@ -54,7 +54,6 @@ class welcome extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10)
                   ),
                 ),
-              
               ),
             ),
           ],

@@ -27,7 +27,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
     if (user == false) {
       // ignore: use_build_context_synchronously
       Navigator.pushReplacement(
-          context, new MaterialPageRoute(builder: (context) => home()));
+          context, new MaterialPageRoute(builder: (context) => bottomnav()));
     }
   }
 
@@ -41,43 +41,54 @@ class _MyLoginPageState extends State<MyLoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: color1,
-      resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        title: Text("Login"),
-      
-      ),
-      body: Container(
-        margin: EdgeInsets.only(top: 50),
-        color: Colors.transparent,
-        child: Column(
-          children: [
-            Image.asset('assets/image/logo.png',
-                height: 250, width: 200,),
-            Container(
-              decoration: BoxDecoration(
-                  color: color2,
-                  borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(40), topLeft: Radius.circular(40))),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text('welcome',
-                  textAlign: TextAlign.center,
-                      style: TextStyle(color: white, fontSize: 20)),
-
-                  Text('Login',textAlign: TextAlign.left,
-                      style: TextStyle(color: white, fontSize: 30)),
-                  textFormField(),
-                ],
-              ),
-            ),
-          ],
+        backgroundColor: color1,
+        resizeToAvoidBottomInset: false,
+        appBar: AppBar(
+          title: Text("Login"),
         ),
-      ),
-    );
+        body:FadeInUp(
+          child: Container(
+            margin: EdgeInsets.only(top: 12),
+            child: Column(
+              children: [
+                Image.asset(
+                  'assets/image/logo.png',
+                  height: 250,
+                  width: 200,
+                ),
+                Container(
+                  height: 400,
+                  decoration: BoxDecoration(
+                      color: color2,
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(40),
+                          topLeft: Radius.circular(40))),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text('WELCOME',
+                          style: TextStyle(color: white, fontSize: 20)),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        children: [
+                          SizedBox(width: 20),
+                          Text('LOGIN',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(color: white, fontSize: 30)),
+                        ],
+                      ),
+                      textFormField(),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ));
   }
 
   Padding textFormField() {
@@ -87,7 +98,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
         key: formKey,
         child: Column(children: [
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8),
             child: TextFormField(
               validator: (value) => value == '' ? "Jangan Dikosongkan" : null,
               controller: usernames,
@@ -134,18 +145,9 @@ class _MyLoginPageState extends State<MyLoginPage> {
               ),
             ),
           ),
-          CheckboxListTile(
-              title: Text('Belajar Flutter'),
-              selected: _CheckBox,
-              value: _CheckBox,
-              tileColor: white,
-              activeColor: white,
-              onChanged: (value) {
-                    setState(() {
-                     _CheckBox = value!;
-                    });
-                  },
-                ), 
+          SizedBox(
+            height: 45,
+          ),
           ElevatedButton(
             onPressed: () {
               var username = usernames.text;
@@ -154,8 +156,8 @@ class _MyLoginPageState extends State<MyLoginPage> {
                 print('Successfull');
                 login.setBool('login', false);
                 login.setString('username', username);
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => home()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => bottomnav()));
               }
             },
             child: Text(
@@ -165,7 +167,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
             ),
             style: ElevatedButton.styleFrom(
               primary: color1,
-              fixedSize: Size(360,50),
+              fixedSize: Size(360, 50),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)),
             ),
