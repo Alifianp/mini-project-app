@@ -6,7 +6,6 @@ import 'package:line_icons/line_icons.dart';
 import 'package:lottie/lottie.dart';
 
 import '../drawer/constant.dart';
-import '../shared/shared.dart';
 
 class favorite extends StatelessWidget {
   const favorite ({Key? key}) : super(key: key);
@@ -15,7 +14,7 @@ class favorite extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: color1,
+        backgroundColor: Color(0xFFDBF1F7),
         drawer: mainDrawer(0),
         body: const Padding(
           padding: EdgeInsets.all(10.0),

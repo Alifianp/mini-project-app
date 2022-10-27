@@ -41,12 +41,12 @@ class _MyLoginPageState extends State<MyLoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: color1,
+        backgroundColor: Color(0xFFDBF1F7),
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text("Login"),
         ),
-        body:FadeInUp(
+        body: FadeInUp(
           child: Container(
             margin: EdgeInsets.only(top: 12),
             child: Column(
@@ -59,7 +59,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
                 Container(
                   height: 400,
                   decoration: BoxDecoration(
-                      color: color2,
+                      color: Color(0xFF136673),
                       borderRadius: BorderRadius.only(
                           topRight: Radius.circular(40),
                           topLeft: Radius.circular(40))),
@@ -69,7 +69,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
                         height: 20,
                       ),
                       Text('WELCOME',
-                          style: TextStyle(color: white, fontSize: 20)),
+                          style: TextStyle(color: Colors.white, fontSize: 20)),
                       SizedBox(
                         height: 20,
                       ),
@@ -78,7 +78,8 @@ class _MyLoginPageState extends State<MyLoginPage> {
                           SizedBox(width: 20),
                           Text('LOGIN',
                               textAlign: TextAlign.left,
-                              style: TextStyle(color: white, fontSize: 30)),
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 30)),
                         ],
                       ),
                       textFormField(),
@@ -102,11 +103,12 @@ class _MyLoginPageState extends State<MyLoginPage> {
             child: TextFormField(
               validator: (value) => value == '' ? "Jangan Dikosongkan" : null,
               controller: usernames,
-              cursorColor: white,
+              cursorColor: Colors.white,
               style: const TextStyle(color: Colors.white),
               decoration: const InputDecoration(
                 floatingLabelStyle: TextStyle(color: Colors.white),
                 labelText: 'Username',
+                hintStyle: TextStyle(color: Colors.white),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: Colors.white,
@@ -126,10 +128,11 @@ class _MyLoginPageState extends State<MyLoginPage> {
             child: TextFormField(
               validator: (value) => value == '' ? "Jangan Dikosongkan" : null,
               controller: passwords,
-              cursorColor: white,
+              cursorColor: Colors.white,
               style: const TextStyle(color: Colors.white),
               decoration: const InputDecoration(
                 floatingLabelStyle: TextStyle(color: Colors.white),
+                hintStyle: TextStyle(color: Colors.white),
                 labelText: 'password',
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -163,10 +166,12 @@ class _MyLoginPageState extends State<MyLoginPage> {
             child: Text(
               "Login",
               style: TextStyle(
-                  fontSize: 15, fontWeight: FontWeight.w400, color: black),
+                  fontSize: 15,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.black),
             ),
             style: ElevatedButton.styleFrom(
-              primary: color1,
+              primary: Color(0xFFDBF1F7),
               fixedSize: Size(360, 50),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)),

@@ -1,5 +1,4 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:app_travel/shared/shared.dart';
 import 'package:flutter/material.dart';
 
 import 'package:lottie/lottie.dart';

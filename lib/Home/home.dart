@@ -1,6 +1,5 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:app_travel/page/page.dart';
-import 'package:app_travel/shared/shared.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,7 +9,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../detail/controller/switchcontroller.dart';
 import '../detail/detailinfo.dart';
 import '../drawer/constant.dart';
-import '../shared/landscape.dart';
+import '../landscape.dart';
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -39,7 +38,7 @@ class _homeState extends State<home> {
   Widget build(BuildContext context) {
     
     return Scaffold(
-      backgroundColor: color1,
+      backgroundColor: Color(0xFFDBF1F7),
       drawer: mainDrawer(3),
       appBar: keluar(),
       body: FadeInDown(
@@ -90,7 +89,7 @@ class _homeState extends State<home> {
                                   style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
-                                      color: white),
+                                      color: Colors.white),
                                 ),
                               ),
                               IconTheme(
@@ -134,7 +133,7 @@ class _homeState extends State<home> {
                                   style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
-                                      color: white),
+                                      color: Colors.white),
                                 ),
                               ),
                               IconTheme(
@@ -196,7 +195,7 @@ class _homeState extends State<home> {
                                       style: TextStyle(
                                           fontSize: 14,
                                           fontWeight: FontWeight.bold,
-                                          color: white),
+                                          color: Colors.white),
                                     ),
                                   ),
                                   SizedBox(
@@ -208,14 +207,14 @@ class _homeState extends State<home> {
                                       Text(
                                         '400',
                                         style:
-                                            TextStyle(fontSize: 10, color: white),
+                                            TextStyle(fontSize: 10, color: Colors.white),
                                       ),
                                       SizedBox(width: 10),
                                       new Image.asset('assets/image/export.png'),
                                       Text(
                                         '300',
                                         style:
-                                            TextStyle(fontSize: 10, color: white),
+                                            TextStyle(fontSize: 10, color: Colors.white),
                                       ),
                                     ],
                                   ),
@@ -243,7 +242,7 @@ class _homeState extends State<home> {
                                       style: TextStyle(
                                           fontSize: 14,
                                           fontWeight: FontWeight.bold,
-                                          color: white),
+                                          color: Colors.white),
                                     ),
                                   ),
                                   SizedBox(
@@ -255,14 +254,14 @@ class _homeState extends State<home> {
                                       Text(
                                         '400',
                                         style:
-                                            TextStyle(fontSize: 10, color: white),
+                                            TextStyle(fontSize: 10, color: Colors.white),
                                       ),
                                       SizedBox(width: 10),
                                       new Image.asset('assets/image/export.png'),
                                       Text(
                                         '300',
                                         style:
-                                            TextStyle(fontSize: 10, color: white),
+                                            TextStyle(fontSize: 10, color: Colors.white),
                                       ),
                                     ],
                                   ),
@@ -290,7 +289,7 @@ class _homeState extends State<home> {
                                       style: TextStyle(
                                           fontSize: 14,
                                           fontWeight: FontWeight.bold,
-                                          color: white),
+                                          color: Colors.white),
                                     ),
                                   ),
                                   SizedBox(
@@ -302,14 +301,14 @@ class _homeState extends State<home> {
                                       Text(
                                         '400',
                                         style:
-                                            TextStyle(fontSize: 10, color: white),
+                                            TextStyle(fontSize: 10, color: Colors.white),
                                       ),
                                       SizedBox(width: 10),
                                       new Image.asset('assets/image/export.png'),
                                       Text(
                                         '300',
                                         style:
-                                            TextStyle(fontSize: 10, color: white),
+                                            TextStyle(fontSize: 10, color: Colors.white),
                                       ),
                                     ],
                                   ),
@@ -337,7 +336,7 @@ class _homeState extends State<home> {
                                       style: TextStyle(
                                           fontSize: 14,
                                           fontWeight: FontWeight.bold,
-                                          color: white),
+                                          color: Colors.white),
                                     ),
                                   ),
                                   SizedBox(
@@ -349,14 +348,14 @@ class _homeState extends State<home> {
                                       Text(
                                         '400',
                                         style:
-                                            TextStyle(fontSize: 10, color: white),
+                                            TextStyle(fontSize: 10, color:Colors.white),
                                       ),
                                       SizedBox(width: 10),
                                       new Image.asset('assets/image/export.png'),
                                       Text(
                                         '300',
                                         style:
-                                            TextStyle(fontSize: 10, color: white),
+                                            TextStyle(fontSize: 10, color: Colors.white),
                                       ),
                                     ],
                                   ),

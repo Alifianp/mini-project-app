@@ -1,6 +1,5 @@
 import 'package:app_travel/fav/favorite.dart';
 import 'package:app_travel/search/search.dart';
-import 'package:app_travel/shared/shared.dart';
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,8 +7,7 @@ import 'package:line_icons/line_icons.dart';
 
 import '../Home/home.dart';
 import '../detail/detailinfo.dart';
-import '../shared/landscape.dart';
-import '../shared/shared.dart';
+import '../landscape.dart';
 import 'bottomcontroller.dart';
 
 
@@ -19,8 +17,9 @@ class bottomnav extends StatelessWidget {
   // Screens
   final List<Widget> screens = const [
     home(),
-    favorite(),
-    search()
+    search(),
+    favorite()
+
   ];
 
   @override

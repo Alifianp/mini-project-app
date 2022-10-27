@@ -5,7 +5,6 @@ import 'package:line_icons/line_icons.dart';
 
 import '../Home/home.dart';
 import '../fav/controller/favoritecontroller.dart';
-import '../shared/shared.dart';
 import 'controller/switchcontroller.dart';
 import 'controller/travcrontoller.dart';
 
@@ -23,12 +22,12 @@ class detailinfo extends StatelessWidget {
       child: Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: AppBar(),
-          backgroundColor: color2,
+          backgroundColor: Color(0xFF136673),
           body: Container(
             child: Column(
               children: [
                 TopImage(),
-                  SingleChildScrollView(
+                SingleChildScrollView(
                   child: Container(
                     height: 300,
                     width: 400,
@@ -68,9 +67,10 @@ class TopImage extends StatelessWidget {
             tag:
                 Get.put(travcontroller()).hunt[_controller.currenthuntIndex].id,
             child: Image.asset(
-              fit: BoxFit.fill,
-                Get.put(travcontroller()).hunt[_controller.currenthuntIndex].img,
-            )),
+                fit: BoxFit.fill,
+                Get.put(travcontroller())
+                    .hunt[_controller.currenthuntIndex]
+                    .img)),
       ),
     );
   }
@@ -92,14 +92,14 @@ class judul extends StatelessWidget {
           children: [
             Container(
                 child: Text(
-                  Get.put(travcontroller())
-                      .hunt[_controller.currenthuntIndex]
-                      .judul,
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 36,
-                      fontWeight: FontWeight.bold),
-                )),
+              Get.put(travcontroller())
+                  .hunt[_controller.currenthuntIndex]
+                  .judul,
+              style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 36,
+                  fontWeight: FontWeight.bold),
+            )),
           ],
         ),
       ),
@@ -225,9 +225,7 @@ class isi extends StatelessWidget {
                     Get.put(travcontroller())
                         .hunt[_controller.currenthuntIndex]
                         .isi,
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 10),
+                    style: const TextStyle(color: Colors.white, fontSize: 10),
                   ),
                 )),
           ],
@@ -247,25 +245,40 @@ class MyFAB extends StatelessWidget {
     var huntController = Get.put(listController());
     var controller = Get.put(switchcontroller());
     return Row(
-      children: 
-          [IconButton(
-          icon: new Icon(Icons.favorite_border,
-          color: Colors.white,
-            size: 40,),
+      children: [
+        IconButton(
+          icon: new Icon(
+            Icons.favorite_border,
+            color: Colors.white,
+            size: 40,
+          ),
           onPressed: () {
             Get.put(listController()).add(
               id: huntController.hunt[controller.currenthuntIndex].id,
               img: huntController.hunt[controller.currenthuntIndex].img,
               judul: huntController.hunt[controller.currenthuntIndex].judul,
               jalan: huntController.hunt[controller.currenthuntIndex].jalan,
-              description: huntController.hunt[controller.currenthuntIndex].description,
+              description:
+                  huntController.hunt[controller.currenthuntIndex].description,
               isi: huntController.hunt[controller.currenthuntIndex].isi,
               fav: huntController.hunt[controller.currenthuntIndex].fav,
               share: huntController.hunt[controller.currenthuntIndex].share,
             );
           },
+        ),
+        Text('100',style:(TextStyle(color: Colors.white))),
+                SizedBox(width: 50,),
+        IconButton(
+          icon: new Icon(
+            Icons.share,
+            color: Colors.white,
+            size: 40,
           ),
-        ],
+          onPressed: () {},
+        ),
+
+        Text('250',style:(TextStyle(color: Colors.white))),
+      ],
     );
   }
 }
