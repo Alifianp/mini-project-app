@@ -30,3 +30,6 @@ jobs:
         artifacts: "build/app/outputs/apk/debug/*"
         tag: v1.0.${{ github.run_number }}
         token: ${{ secrets.TOKEN }}
+
+# push to master, main, develop
+# pull request on main master
