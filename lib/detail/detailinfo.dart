@@ -28,7 +28,7 @@ class detailinfo extends StatelessWidget {
             child: Column(
               children: [
                 TopImage(),
-                  SingleChildScrollView(
+                SingleChildScrollView(
                   child: Container(
                     height: 300,
                     width: 400,
@@ -92,14 +92,14 @@ class judul extends StatelessWidget {
           children: [
             Container(
                 child: Text(
-                  Get.put(travcontroller())
-                      .hunt[_controller.currenthuntIndex]
-                      .judul,
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 36,
-                      fontWeight: FontWeight.bold),
-                )),
+              Get.put(travcontroller())
+                  .hunt[_controller.currenthuntIndex]
+                  .judul,
+              style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 36,
+                  fontWeight: FontWeight.bold),
+            )),
           ],
         ),
       ),
@@ -225,9 +225,7 @@ class isi extends StatelessWidget {
                     Get.put(travcontroller())
                         .hunt[_controller.currenthuntIndex]
                         .isi,
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 10),
+                    style: const TextStyle(color: Colors.white, fontSize: 10),
                   ),
                 )),
           ],
@@ -247,25 +245,39 @@ class love extends StatelessWidget {
     var huntController = Get.put(listController());
     var controller = Get.put(switchcontroller());
     return Row(
-      children: 
-          [IconButton(
-          icon: new Icon(Icons.favorite_border,
-          color: Colors.white,
-            size: 40,),
+      children: [
+        IconButton(
+          icon: new Icon(
+            Icons.favorite_border,
+            color: Colors.white,
+            size: 40
+          ),
           onPressed: () {
             Get.put(listController()).add(
               id: huntController.hunt[controller.currenthuntIndex].id,
               img: huntController.hunt[controller.currenthuntIndex].img,
               judul: huntController.hunt[controller.currenthuntIndex].judul,
               jalan: huntController.hunt[controller.currenthuntIndex].jalan,
-              description: huntController.hunt[controller.currenthuntIndex].description,
+              description:
+                  huntController.hunt[controller.currenthuntIndex].description,
               isi: huntController.hunt[controller.currenthuntIndex].isi,
               fav: huntController.hunt[controller.currenthuntIndex].fav,
               share: huntController.hunt[controller.currenthuntIndex].share,
             );
           },
+        ),
+        Text('200'),
+        IconButton(
+          icon: new Icon(
+            Icons.share,
+            color: Colors.white,
+            size: 40
           ),
-        ],
+          onPressed: () {
+          },
+        ),
+        Text('200'),
+      ],
     );
   }
 }
