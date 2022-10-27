@@ -8,10 +8,10 @@ on:
       - main
       - master
       - develop
-name: "tugas miniproject"
+name: "app_travel"
 jobs:
   build:
-   name: tugas miniproject
+   name: app_travel
    runs-on: macos-latest
    steps:
     - uses: actions/checkout@v1
