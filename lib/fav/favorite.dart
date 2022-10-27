@@ -6,16 +6,16 @@ import 'package:line_icons/line_icons.dart';
 import 'package:lottie/lottie.dart';
 
 import '../drawer/constant.dart';
-
-
+import '../shared/shared.dart';
 
 class favorite extends StatelessWidget {
-  const favorite({Key? key}) : super(key: key);
+  const favorite ({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return  SafeArea(
+    return SafeArea(
       child: Scaffold(
+        backgroundColor: color1,
         drawer: mainDrawer(0),
         body: const Padding(
           padding: EdgeInsets.all(10.0),
@@ -33,9 +33,12 @@ class MainItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var FavoriteController =  Get.put(listController());
+    var FavoriteController = Get.put(listController());
     return Column(
       children: [
+        SizedBox(height: 40),
+        Text('Your Favorite',style: TextStyle(
+                          fontSize: 25, fontWeight: FontWeight.bold)),
         GetBuilder<listController>(builder: (context) {
           return FavoriteController.hunt.isEmpty
               ? Expanded(
@@ -88,13 +91,15 @@ class MainItem extends StatelessWidget {
                                   right: 0,
                                   child: FadeInLeft(
                                     delay: Duration(
-                                        milliseconds: (index / 0.5 * 100).toInt()),
+                                        milliseconds:
+                                            (index / 0.5 * 100).toInt()),
                                     child: Container(
                                       width: w / 1.3,
                                       height: h / 5.5,
                                       decoration: BoxDecoration(
                                           color: unSelectedColor,
-                                          borderRadius: BorderRadius.circular(100),
+                                          borderRadius:
+                                              BorderRadius.circular(100),
                                           boxShadow: const [
                                             BoxShadow(
                                                 color: Color.fromARGB(
@@ -110,7 +115,8 @@ class MainItem extends StatelessWidget {
                                   bottom: 3,
                                   child: FadeInLeft(
                                     delay: Duration(
-                                        milliseconds: (index / 0.5 * 200).toInt()),
+                                        milliseconds:
+                                            (index / 0.5 * 200).toInt()),
                                     child: Spin(
                                       delay: Duration(
                                           milliseconds:
@@ -119,8 +125,8 @@ class MainItem extends StatelessWidget {
                                         width: w / 2.5,
                                         height: h / 5,
                                         child: Hero(
-                                          tag: FavoriteController
-                                              .hunt[index].id,
+                                          tag:
+                                              FavoriteController.hunt[index].id,
                                           child: Image.asset(
                                             FavoriteController.hunt[index].img,
                                             fit: BoxFit.cover,
@@ -135,7 +141,8 @@ class MainItem extends StatelessWidget {
                                   top: 40,
                                   child: FadeInLeft(
                                     delay: Duration(
-                                        milliseconds: (index / 0.5 * 300).toInt()),
+                                        milliseconds:
+                                            (index / 0.5 * 300).toInt()),
                                     child: Text(
                                       FavoriteController.hunt[index].judul,
                                       style: TextStyle(
@@ -150,7 +157,8 @@ class MainItem extends StatelessWidget {
                                   top: 68,
                                   child: FadeInLeft(
                                     delay: Duration(
-                                        milliseconds: (index / 0.5 * 400).toInt()),
+                                        milliseconds:
+                                            (index / 0.5 * 400).toInt()),
                                     child: Text(
                                       FavoriteController.hunt[index].judul,
                                       style: TextStyle(
@@ -175,5 +183,23 @@ class MainItem extends StatelessWidget {
   }
 }
 
+class a extends StatelessWidget {
+  const a({
+    Key? key,
+  }) : super(key: key);
 
 
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        child: FadeInUp(
+      delay: const Duration(milliseconds: 600),
+      child: Text(
+        "Tidak ada Favorite!",
+        style: TextStyle(
+          fontSize: 25,
+        ),
+      ),
+    ));
+  }
+}

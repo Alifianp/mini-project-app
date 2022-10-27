@@ -1,4 +1,5 @@
 import 'package:app_travel/fav/favorite.dart';
+import 'package:app_travel/search/search.dart';
 import 'package:app_travel/shared/shared.dart';
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,7 @@ class bottomnav extends StatelessWidget {
   final List<Widget> screens = const [
     home(),
     favorite(),
+    search()
   ];
 
   @override
@@ -43,9 +45,9 @@ class bottomnav extends StatelessWidget {
                       const EdgeInsets.symmetric(),
                   child: CustomNavigationBar(
                     iconSize: 30.0,
-                    unSelectedColor: Colors.white,
-                    strokeColor: Colors.white,
-                    backgroundColor: Colors.teal,
+                    unSelectedColor: Colors.teal,
+                    strokeColor: Colors.teal,
+                    backgroundColor: Colors.white,
                     selectedColor: Colors.black,
                     currentIndex: _controller.currentIndex,
                     onTap: (index) {
