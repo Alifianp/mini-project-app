@@ -25,7 +25,6 @@ class _MyLoginPageState extends State<MyLoginPage> {
     user = (login.getBool('login') ?? true);
     print(user);
     if (user == false) {
-      // ignore: use_build_context_synchronously
       Navigator.pushReplacement(
           context, new MaterialPageRoute(builder: (context) => bottomnav()));
     }

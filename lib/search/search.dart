@@ -24,10 +24,16 @@ class src extends StatefulWidget {
 List<liburan> liburans = [
   liburan(
       img: "assets/image/Mountain 2.jpg",
-      judul: 'Everest'),
+      judul: 'Montain'),
   liburan(
       img: "assets/image/Mountain 1.jpg",
-      judul: 'Waterfall')
+      judul: 'Aragant'),
+        liburan(
+      img: "assets/image/Lake 1.jpg",
+      judul: 'Ricki'),
+  liburan(
+      img: "assets/image/Lake 2.jpg",
+      judul: 'Crate'),
 ];
 
 class _srcState extends State<src> {
